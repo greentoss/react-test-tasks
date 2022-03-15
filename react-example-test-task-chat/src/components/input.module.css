@@ -1,0 +1,19 @@
+.input {
+    color: #fafafa;
+    font-size: 20px;
+    width: 80%;
+    padding: 2%;
+    border-radius: 5px;
+    background-color: rgba(40, 44, 52, 0.11);
+}
+.button {
+    width: 15%;
+}
+
+.inputBox {
+    display: flex;
+    margin: 0 4rem;
+    /*position: absolute;*/
+    /*bottom: 0;*/
+    /*left: 0;*/
+}

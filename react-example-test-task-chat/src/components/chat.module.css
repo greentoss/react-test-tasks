@@ -1,0 +1,10 @@
+.chatBox {
+    display: flex;
+    margin: 0 4rem 2rem 4rem;
+    color: #fafafa;
+    font-size: 20px;
+    height: 350px;
+    padding: 2%;
+    border-radius: 5px;
+    background-color: rgba(150, 175, 152, 0.11);
+}
