@@ -1,0 +1,222 @@
+body {
+    max-width: 100%;
+    min-width: 900px;
+    margin: 0 auto;
+    padding: 0;
+}
+.header_banner {
+    height: 85px;
+    display: flex;
+    z-index: 10;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    width: 100%;
+    background-color: #fff;
+    align-items: center;
+    justify-content: space-around;
+}
+.header_logo_text {
+    color: #777;
+    font-size: 16px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 7px;
+}
+.header_nav {
+    width: 25%;
+}
+.header_nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+.header_nav ul li{
+    font-size: 14px;
+    font-weight: 300;
+}
+.header_nav ul li a{
+    text-decoration: none;
+    color: #777;
+}
+.header_nav ul li a:hover {
+    color: #bfba9c;
+}
+.header {
+    height: 100vh;
+    position: relative;
+}
+.header:after {
+    margin-top: 50px;
+    position: absolute;
+    content: "";
+    background: url("../img/home-bg.jpg");
+    background-repeat: no-repeat;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-size: cover;
+    z-index: -3;
+}
+.header:before {
+    content: "";
+    position: absolute;
+    opacity: 0.5;
+    background-color: black;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -2;
+}
+.header_content {
+    padding-top: 50px;
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.header_content h1 {
+    color: #fff;
+    font-size: 55px;
+    margin-top: 0;
+    margin-bottom: 35px;
+}
+.header_content p {
+    margin: 0;
+    color: #bfba9c;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 5px;
+    word-spacing: 3px;
+}
+.header_button {
+    width: 160px;
+    height: 45px;
+    margin-top: 50px;
+    background-color: #fff;
+    border: none;
+    box-sizing: border-box;
+    border-radius: 22.5px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    color: #777;
+    text-transform: uppercase;
+}
+.main {
+    margin: 0 auto;
+    padding: 0;
+    width: 900px;
+    /*width: 100%;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.blog_section {
+    margin-top: 115px;
+    width: 100%;
+    border-bottom: 1px solid #cccccc;
+}
+.section_img {
+    width: 100%;
+}
+.section_author_info ul{
+    padding: 0;
+    display: flex;
+    list-style: none;
+    justify-content: flex-start;
+    align-items: center;
+}
+.section_author_info ul li{
+    margin-right: 17px;
+    color: #777;
+    font-size: 18px;
+}
+.section_author_info ul li span{
+    margin-left: 5px;
+}
+.author_img {
+    width: 45px;
+    height: 45px;
+    border-radius: 22.5px;
+}
+.blog_section h2 {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #222;
+}
+.blog_section_article {
+    color: #777;
+    font-size: 18px;
+    line-height: 150%;
+    margin-bottom: 0;
+}
+.blog_section_button {
+    width: 215px;
+    height: 42px;
+    margin-top: 45px;
+    margin-bottom: 62px;
+    background-color: #fff;
+    border: 1px solid #777;
+    box-sizing: border-box;
+    border-radius: 22.5px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    color: #777;
+    text-transform: uppercase;
+}
+.footer {
+    height: 300px;
+    margin: 0 auto;
+    padding: 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer:before {
+    content: "";
+    background-color: #000;
+    position: absolute;
+    z-index: -2;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+}
+.footer_box {
+    width: 900px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.footer_section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.footer_section h2 {
+    color: #fff;
+    margin: 0;
+    font-size: 30px;
+}
+.footer_section p, .footer_section span{
+    color: #777;
+    font-size: 15px;
+}
+.footer_section p {
+    width: 385px;
+    line-height: 120%;
+    margin-bottom: 0;
+    margin-top: 15px;
+}
+.footer_section span {
+    margin-top: 15px;
+}
