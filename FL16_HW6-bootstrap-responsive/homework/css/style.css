@@ -1,0 +1,16 @@
+.games-dark, footer {
+    background-color: #343a40;
+}
+.games-white {
+    background-color: #fff;
+}
+img {
+    max-height: 100%;
+    max-width: 100%;
+}
+.orange {
+    background-color:Coral;
+}
+body {
+    font-family: roboto, serif;
+}
