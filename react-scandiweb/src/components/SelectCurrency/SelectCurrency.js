@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class SelectCurrrency extends React.Component {
+export default class SelectCurrency extends React.Component {
     constructor() {
         super();
         // this.state = {color: "red"};
