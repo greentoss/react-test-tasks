@@ -55,3 +55,5 @@ u will need it for adding goods to cart
 
 __remember thet here we have to use **CLASS** components__
 
+- make ``npm install apollo-boost react-apollo graphql --save``
+- endpoint is **'http://localhost:4000/'**

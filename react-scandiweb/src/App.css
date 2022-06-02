@@ -422,6 +422,10 @@ time, mark, audio, video {
 
 /*===================================product description*/
 /*===================================Cart*/
+.main {
+  padding-top: 80px;
+
+}
 .cart-heading {
   font-family: 'Raleway', sans-serif;
   font-style: normal;
@@ -430,7 +434,7 @@ time, mark, audio, video {
   line-height: 40px;
   text-transform: uppercase;
   color: #1D1F22;
-  margin-top: 80px;
+
   margin-bottom: 55px;
 }
 

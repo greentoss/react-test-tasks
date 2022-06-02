@@ -22,15 +22,14 @@ class Header extends React.Component {
         this.setState({ openCartOverlay: false });
     };
     freezeScroll = () => {
-        document.body.style.position = 'fixed';
-        document.body.style.top = `-${window.scrollY}px`;
-        console.log('freezescroll')
+        document.body.style.height = '100%';
+        document.body.style.overflow = 'hidden';
+        document.body.style.paddingRight = '17px'
     }
     unFreezeScroll = () => {
-        const scrollY = document.body.style.top;
-        document.body.style.position = '';
-        document.body.style.top = '';
-        window.scrollTo(0, parseInt(scrollY || '0') * -1);
+        document.body.style.height = 'auto';
+        document.body.style.overflow = 'visible';
+        document.body.style.paddingRight = '0'
     }
     render() {
         return (
