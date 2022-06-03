@@ -1,15 +1,30 @@
 import goodsImg from "../../temporaryImg/product-card-Image.jpg";
-import round_cart_img from "../../pngs/CircleCartIcon.png";
 import React from "react";
 import {Link} from "react-router-dom";
+import {graphql} from "@apollo/client/react/hoc";
+import {getProductsById} from "../../queries/queries";
 
-export default class GoodsCard extends React.Component {
+class GoodsCard extends React.Component {
     constructor() {
         super();
-        // this.state = {color: "red"};
+        this.state = {};
+    }
+    displayProduct(){
+        let data = this.props.data;
+        if(data.loading) {
+            return null
+        } else if (data.error) {
+            console.log('data error')
+        } else {
+            console.log(data)
+        }
     }
     render() {
-        return <Link to='/about' className='goods-card'>
+        // console.log(this.props)
+        // console.log(this.props.productId)
+
+
+        return <div to='/about' className='goods-card'>
             <div className='goods-card-image-holder'>
                 <img src={goodsImg} alt='goods-img'/>
                 <button className='round-cart-button'>
@@ -21,8 +36,19 @@ export default class GoodsCard extends React.Component {
                 </button>
                 <h4 className='outofstock-mark'>out of stock</h4>
             </div>
-            <h3 className='goods-card-heading'>Appolo Running Short</h3>
+            <Link to='/about'><h3 className='goods-card-heading'>Appolo Running Short</h3></Link>
             <h3 className='goods-card-price'>$ 50.00</h3>
-        </Link>;
+            {this.displayProduct()}
+        </div>;
     }
 }
+
+export default graphql(getProductsById, {
+    options: (props => {
+        return {
+            variables: {
+                id: props.productId
+            }
+        }
+    })
+})(GoodsCard);

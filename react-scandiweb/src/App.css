@@ -203,7 +203,9 @@ time, mark, audio, video {
   /*border: 1px solid black;*/
 }
 
-
+.goods-card a {
+  text-decoration: none;
+}
 
 .round-cart-button {
   display: none;
@@ -265,6 +267,8 @@ time, mark, audio, video {
   font-size: 18px;
   line-height: 160%;
   color: #1D1F22;
+  text-decoration: none;
+
 }
 .goods-card-price {
   font-family: 'Raleway', sans-serif;
