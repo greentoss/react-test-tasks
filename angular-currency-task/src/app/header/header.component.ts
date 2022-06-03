@@ -20,7 +20,6 @@ export class HeaderComponent implements OnInit {
     fetch(`${this.CURRENCY_URL}?base=${this.fromCurrencyEuro}&symbols=${this.toCurrency}`)
       .then(res => res.json())
       .then(data => {
-        console.log(data, 'data to header')
         this.toCurrencyUAAmountEuro = data.rates[this.toCurrency].toFixed(2)
       })
   }
@@ -29,7 +28,6 @@ export class HeaderComponent implements OnInit {
     fetch(`${this.CURRENCY_URL}?base=${this.fromCurrencyDolar}&symbols=${this.toCurrency}`)
       .then(res => res.json())
       .then(data => {
-        console.log(data, 'data to header')
         this.toCurrencyUAAmountDolar = data.rates[this.toCurrency].toFixed(2)
       })
   }
