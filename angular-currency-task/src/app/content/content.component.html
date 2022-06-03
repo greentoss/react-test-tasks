@@ -1,0 +1,32 @@
+<h2>Currency Convertor</h2>
+<div class="row ">
+  <input [value]="fromAmount"
+         (change)="onChangeFromAmount($event)"
+    class="input currency-from-input" type="number"
+  >
+  <select (change)="onChangeFromCurrency($event)"
+    class="currency-from-option" name="select"
+  >
+    <option *ngFor="let item of currencyOptions"
+            [selected]="item === fromCurrency"
+            [value]="item">
+      {{item}}
+    </option>
+  </select>
+</div>
+<div class="equals">=</div>
+<div class="row currency-to">
+  <input [value]="toAmount"
+         (change)="onChangeToAmount($event)"
+    class="input currency-to-input" type="number"
+  >
+  <select (change)="onChangeToCurrency($event)"
+    class="currency-to-option" name="select"
+  >
+    <option *ngFor="let item of currencyOptions"
+            [selected]="item === toCurrency"
+            [value]="item">
+      {{item}}
+    </option>
+  </select>
+</div>
