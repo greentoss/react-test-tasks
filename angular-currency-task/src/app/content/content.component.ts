@@ -53,7 +53,6 @@ export class ContentComponent implements OnInit {
     this.handleToAmountChange(+newAmount)
   }
   handleFromAmountChange(e:number) {
-    console.log(e, 'newAmount in handle func');
     this.fromAmount = e;
     this.amount = e;
     this.amountInFromCurrency = true;
