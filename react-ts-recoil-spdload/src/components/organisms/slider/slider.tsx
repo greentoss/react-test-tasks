@@ -6,7 +6,6 @@ import SliderImgs from "../../molecules/slider-imgs/sliderImgs";
 const StyledSlider = styled.div`
   width: 100%;
   height: 740px;
-  //max-height: 740px;
   position: relative;
   background-color: antiquewhite;
   z-index: -5;

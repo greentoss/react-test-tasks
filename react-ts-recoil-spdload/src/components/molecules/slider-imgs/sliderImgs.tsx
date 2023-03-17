@@ -21,7 +21,7 @@ const SliderImgs: React.FC<SliderImgsProps> = ({ images, currentIndex }) => {
         <StyledSliderImgs>
             {images.map((image, index) => (
                 <SliderImg
-                    className={`img ${index === currentIndex ? "current-left" : "next-left"}`}
+                    className={`img ${index === currentIndex ? "current" : "next"}`}
                     key={index}
                     src={image}
                 />

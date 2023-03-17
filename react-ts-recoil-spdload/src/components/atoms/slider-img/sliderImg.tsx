@@ -10,21 +10,21 @@ const StyledSliderImg = styled.img<{ className: string }>`
   position: absolute;
   right: 100%;
   object-fit: cover;
-  &.next-left {
-    animation: 1s cubic-bezier(0.645, 0.045, 0.355, 1) 0s both leftNext;
+  &.next {
+    animation: 1s cubic-bezier(0.645, 0.045, 0.355, 1) 0s both slideLeft;
   }
-  &.current-left {
-    animation: 1s cubic-bezier(0.645, 0.045, 0.355, 1) 0s both leftCurr;
-  }
-
-  @keyframes leftNext {
-    from { right: -100%; }
-    to { right: 0; }
+  &.current {
+    animation: 1s cubic-bezier(0.645, 0.045, 0.355, 1) 0s both slideRight;
   }
 
-  @keyframes leftCurr {
+  @keyframes slideLeft {
     from { right: 0; }
-    to { right: 100%; }
+    to { right: -100%; }
+  }
+
+  @keyframes slideRight {
+    from { right: 100%; }
+    to { right: 0; }
   }
 `;
 

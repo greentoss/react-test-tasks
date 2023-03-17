@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
-import Slider from "../slider/Slider";
+import Slider from "../slider/slider";
 import BannerHeading from "../../molecules/banner-heading/banner-heading";
 
 const StyledBanner = styled.div`
