@@ -1,8 +1,8 @@
 import React from 'react';
 import {BrowserRouter as Router,  Routes,  Route} from "react-router-dom";
-import Header from "./components/app-header/header";
-import Home from "./components/app-home/home";
-import Favourites from "./components/app-favourites/favourites";
+import Header from "./components/organisms/app-header/header";
+import Home from "./pages/app-home/home";
+import Favourites from "./pages/app-favourites/favourites";
 
 const App = () =>  {
   return (

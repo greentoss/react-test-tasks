@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
-import Dot from "./dot/dot"
+import Dot from "../../atoms/slider-dot/dot"
 
 const StyledDots = styled.div`
   position: absolute;
@@ -24,7 +24,7 @@ const Dots: React.FC<DotsProps> = ({ images, handleDotClick, currentIndex}) => {
         <StyledDots>
             {images.map((_, index) => (
                 <Dot
-                    className={`dot ${index === currentIndex ? "active-dot" : ""}`}
+                    className={`dot ${index === currentIndex ? "active-slider-dot" : ""}`}
                     key={index}
                     onClick={() => handleDotClick(index)}
                 />

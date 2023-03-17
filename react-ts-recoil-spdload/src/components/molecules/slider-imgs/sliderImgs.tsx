@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import styled from "styled-components";
-import SliderImg from "./slider-img/sliderImg";
+import SliderImg from "../../atoms/slider-img/sliderImg";
 
 const StyledSliderImgs = styled.div`
   width: 100%;

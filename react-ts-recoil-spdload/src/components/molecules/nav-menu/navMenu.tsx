@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
-import SignInButton from "../buttons/sign-in/signIn";
-import LikeButton from "../buttons/like-button/likeButton";
+import SignInButton from "../../atoms/buttons/sign-in/signIn";
+import LikeButton from "../../atoms/buttons/like-button/likeButton";
 
 const StyledMenu = styled.div`
     display: flex;

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
-import HeadingOne from "../headingOne/headingOne";
-import HeadingThree from "../headingThree/headingThree";
+import HeadingOne from "../../atoms/headings/headingOne/headingOne";
+import HeadingThree from "../../atoms/headings/headingThree/headingThree";
 
 
 const StyledBannerHeading = styled.div`

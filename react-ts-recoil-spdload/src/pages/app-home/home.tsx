@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
-import Banner from "../banner/banner";
+import Banner from "../../components/organisms/banner/banner";
 
 const Home = () =>  {
     return (
