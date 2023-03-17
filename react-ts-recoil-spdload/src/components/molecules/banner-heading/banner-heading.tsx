@@ -18,6 +18,7 @@ const BannerHeading = () =>  {
         <StyledBannerHeading>
             <HeadingThree text={'the space is waiting for'}/>
             <HeadingOne text={'you'}/>
+
         </StyledBannerHeading>
     );
 }

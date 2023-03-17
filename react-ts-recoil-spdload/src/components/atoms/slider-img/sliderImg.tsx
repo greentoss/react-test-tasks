@@ -11,10 +11,10 @@ const StyledSliderImg = styled.img<{ className: string }>`
   right: 100%;
   object-fit: cover;
   &.next {
-    animation: 1s cubic-bezier(0.645, 0.045, 0.355, 1) 0s both slideLeft;
+    animation: 1.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0s both slideLeft;
   }
   &.current {
-    animation: 1s cubic-bezier(0.645, 0.045, 0.355, 1) 0s both slideRight;
+    animation: 1.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0s both slideRight;
   }
 
   @keyframes slideLeft {

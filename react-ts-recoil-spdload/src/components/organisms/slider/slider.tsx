@@ -8,7 +8,6 @@ const StyledSlider = styled.div`
   height: 740px;
   position: relative;
   background-color: antiquewhite;
-  z-index: -5;
 `
 
 interface SliderProps {
@@ -21,7 +20,7 @@ const Slider: React.FC<SliderProps> = ({ images }) => {
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentIndex((currentIndex) => (currentIndex + 1) % images.length);
-        }, 3000);
+        }, 4000);
 
         return () => clearInterval(interval);
     }, [images]);

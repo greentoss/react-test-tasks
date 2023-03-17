@@ -2,10 +2,12 @@ import React from 'react';
 import styled from "styled-components";
 import Slider from "../slider/slider";
 import BannerHeading from "../../molecules/banner-heading/banner-heading";
+import ExploreButton from "../../atoms/buttons/explore-button/explore";
 
 const StyledBanner = styled.div`
   position: relative;
-  margin-top: -85px
+  margin-top: -85px;
+  z-index: 5;
 `
 
 const images = [
@@ -20,6 +22,7 @@ const Banner = () =>  {
         <StyledBanner>
             <BannerHeading />
             <Slider images={images} />
+            <ExploreButton name={'Explore tours'}/>
         </StyledBanner>
     );
 }

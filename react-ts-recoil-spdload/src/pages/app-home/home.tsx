@@ -7,7 +7,7 @@ const Home = () =>  {
         <>
             <Banner />
             <hr/>
-            <main>
+            <main style={{height: 2000}}>
                 cards
             </main>
         </>
