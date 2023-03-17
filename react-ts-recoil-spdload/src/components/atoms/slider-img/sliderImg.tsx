@@ -1,60 +1,40 @@
 import React from 'react';
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
-const StyledSliderImg = styled.div<{ backgroundImage?: string }>`
+const StyledSliderImg = styled.img<{ className: string }>`
   min-width: 100%;
   height: 100%;
   display: flex;
   align-items: flex-end;
   justify-content: center;
   position: absolute;
-  left: 100%;
-  background-size: cover;
-  background-position: 50%;
-  ${({ backgroundImage }) => css`
-    background-image: url(${backgroundImage});
-  `}
+  right: 100%;
+  object-fit: cover;
   &.next-left {
     animation: 1s cubic-bezier(0.645, 0.045, 0.355, 1) 0s both leftNext;
   }
-  //&.current-left {
-  //  animation: 1s cubic-bezier(0.645, 0.045, 0.355, 1) 0s both leftCurr;
-  //}
-  //&.next-right {
-  //  animation: 1s cubic-bezier(0.645, 0.045, 0.355, 1) 0s both rightNext;
-  //}
-  //&.current-right {
-  //  animation: 1s cubic-bezier(0.645, 0.045, 0.355, 1) 0s both rightCurr;
-  //}
-
-  @keyframes leftNext {
-    from { left: 100%; }
-    to { left: 0; }
+  &.current-left {
+    animation: 1s cubic-bezier(0.645, 0.045, 0.355, 1) 0s both leftCurr;
   }
 
-  //@keyframes leftCurr {
-  //  from { left: 0; }
-  //  to { left: -100%; }
-  //}
-  //
-  //@keyframes rightNext {
-  //  from { left: -100%; }
-  //  to { left: 0; }
-  //}
-  //
-  //@keyframes rightCurr {
-  //  from { left: 0; }
-  //  to { left: 100%; }
-  //}
+  @keyframes leftNext {
+    from { right: -100%; }
+    to { right: 0; }
+  }
+
+  @keyframes leftCurr {
+    from { right: 0; }
+    to { right: 100%; }
+  }
 `;
 
 interface SliderImgProps {
     className: string;
-    style: { backgroundImage?: string };
+    src: string;
 }
 
-const SliderImg: React.FC<SliderImgProps> = ({ className, style }) => {
-    return <StyledSliderImg className={className} backgroundImage={style.backgroundImage} />;
+const SliderImg: React.FC<SliderImgProps> = ({ className, src }) => {
+    return <StyledSliderImg className={className} src={src} />;
 };
 
 export default SliderImg;

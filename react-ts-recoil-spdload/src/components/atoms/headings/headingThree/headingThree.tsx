@@ -2,7 +2,7 @@ import React from 'react';
 import styled from "styled-components";
 
 const StyledHeadingThree = styled.h3`
-  color:#000;
+  color:#fff;
   text-transform: uppercase;
   font-family: 'Syne',serif;
   font-weight: 800;

@@ -10,8 +10,11 @@ const StyledHeader = styled.header`
   justify-content: space-around;
   align-items: center;
   height: 84px;
-  color: #000;
-  opacity: 1
+  //color: #000;
+  background-color: rgba(30, 30, 30, 0.7);
+  
+  position: sticky;
+  z-index: 5;
 `
 
 const Header = () =>  {

@@ -4,7 +4,9 @@ import styled from "styled-components";
 import {Link} from "react-router-dom";
 
 const StyledLogo = styled.div`
-
+  img {
+    background: none;
+  }
 `
 
 const Logo = () =>  {

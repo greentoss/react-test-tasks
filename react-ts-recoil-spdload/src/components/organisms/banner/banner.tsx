@@ -4,8 +4,8 @@ import Slider from "../slider/Slider";
 import BannerHeading from "../../molecules/banner-heading/banner-heading";
 
 const StyledBanner = styled.div`
-  //height: 740px;
   position: relative;
+  margin-top: -85px
 `
 
 const images = [

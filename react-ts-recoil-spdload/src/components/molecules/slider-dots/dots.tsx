@@ -4,13 +4,12 @@ import Dot from "../../atoms/slider-dot/dot"
 
 const StyledDots = styled.div`
   position: absolute;
-  //left: 0;
   display: flex;
   justify-content: center;
   gap: 8px;
   width: 100%;  //places dots in center
   top: 50%;
-  z-index: +5;
+  z-index: 10;
 `
 
 interface DotsProps {
@@ -24,7 +23,7 @@ const Dots: React.FC<DotsProps> = ({ images, handleDotClick, currentIndex}) => {
         <StyledDots>
             {images.map((_, index) => (
                 <Dot
-                    className={`dot ${index === currentIndex ? "active-slider-dot" : ""}`}
+                    className={`dot ${index === currentIndex ? "active-dot" : ""}`}
                     key={index}
                     onClick={() => handleDotClick(index)}
                 />

@@ -7,10 +7,14 @@ const StyledDot = styled.div`
   background: none;
   border-radius: 50%;
   cursor: pointer;
-  border: 1px solid black;
+  border: 1px solid #fff;
   display: flex;
   align-items: center;
   justify-content: center;
+  
+  &:hover {
+    cursor: pointer;
+  }
 
   &::before {
     content: '';
@@ -22,7 +26,7 @@ const StyledDot = styled.div`
 
   &.active-dot::before {
     display: block;
-    background-color: black;
+    background-color: #fff;
   }
 `
 

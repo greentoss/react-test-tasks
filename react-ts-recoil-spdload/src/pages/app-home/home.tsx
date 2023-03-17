@@ -5,7 +5,6 @@ import Banner from "../../components/organisms/banner/banner";
 const Home = () =>  {
     return (
         <>
-            <hr/>
             <Banner />
             <hr/>
             <main>
