@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from "styled-components";
-import Dot from "../../atoms/slider-dot/dot"
+import Dot from "../../atoms/dot/dot"
 
-const StyledDots = styled.div`
+const StyledSliderDots = styled.div`
   position: absolute;
   display: flex;
   justify-content: center;
@@ -12,24 +12,26 @@ const StyledDots = styled.div`
   z-index: 10;
 `
 
-interface DotsProps {
+interface SliderDotsProps {
     images: string[];
     currentIndex: number;
     handleDotClick: (index: number) => void;
+    dotColor: string;
 }
 
-const Dots: React.FC<DotsProps> = ({ images, handleDotClick, currentIndex}) => {
+const SliderDots: React.FC<SliderDotsProps> = ({ images, handleDotClick, currentIndex, dotColor}) => {
     return (
-        <StyledDots>
+        <StyledSliderDots>
             {images.map((_, index) => (
                 <Dot
                     className={`dot ${index === currentIndex ? "active-dot" : ""}`}
                     key={index}
                     onClick={() => handleDotClick(index)}
+                    dotColor={dotColor}
                 />
             ))}
-        </StyledDots>
+        </StyledSliderDots>
     );
 };
 
-export default Dots;
+export default SliderDots;

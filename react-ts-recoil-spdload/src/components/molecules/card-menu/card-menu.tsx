@@ -8,13 +8,13 @@ const StyledMenu = styled.div`
     gap: 12px;
 `
 
-const Menu = () =>  {
+const CardMenu = () =>  {
     return (
         <StyledMenu>
+            <ActionButton name={ 'Buy' } />
             <LikeButton />
-            <ActionButton name={ 'Sign in' } />
         </StyledMenu>
     );
 }
 
-export default Menu;
+export default CardMenu;

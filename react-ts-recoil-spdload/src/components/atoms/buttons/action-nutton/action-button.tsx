@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from "styled-components";
 
-const StyledButton = styled.button`
+const StyledActionButton = styled.button`
+  flex-grow: 1;
   height: 53px;
 
   padding-left: 35px;
@@ -34,12 +35,12 @@ interface NavButtonProps {
     name: string
 }
 
-const SignInButton = ({ name }: NavButtonProps) =>  {
+const ActionButton = ({ name }: NavButtonProps) =>  {
     return (
-        <StyledButton>
+        <StyledActionButton>
             { name }
-        </StyledButton>
+        </StyledActionButton>
     );
 }
 
-export default SignInButton;
+export default ActionButton;

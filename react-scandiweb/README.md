@@ -24,7 +24,7 @@ class App extends React.Component {
               <Router>
                   <Header />
                   <Routes>
-                      <Route exact path='/' element = {<Main />} />
+                      <Route exact path='/' element = {<MainHeading />} />
                       <Route path='/about' element = {<ProductDescription />} />
                       <Route path='/cart' element = {<Cart />} />
                       <Route path = '*' element = {<ClientError />} />
@@ -72,7 +72,7 @@ const client = new ApolloClient({
         <App />
     </ApolloProvider>
 ```
-- go to Component which renders first page with goods = Main.js
+- go to Component which renders first page with goods = MainHeading.js
 
 make there query, using gql`` thing, and import it from 
 
@@ -103,8 +103,9 @@ const getGoodsQuery = gql`
 `
 ```
 - we are using class components, so use this in the bottom of class file:
+
 ```javascript
-export default graphql(getGoodsQuery)(Main);
+export default graphql(getGoodsQuery)(MainHeading);
 ```
 this thing is similar to connect thing from redux. it looks similar perhaps.
 

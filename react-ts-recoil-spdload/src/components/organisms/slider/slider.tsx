@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import Dots from "../../molecules/slider-dots/dots";
 import SliderImgs from "../../molecules/slider-imgs/sliderImgs";
+import SliderDots from "../../molecules/slider-dots/slider-dots";
 
 const StyledSlider = styled.div`
   width: 100%;
@@ -33,10 +33,11 @@ const Slider: React.FC<SliderProps> = ({ images }) => {
                 images={images}
                 currentIndex={currentIndex}
             />
-            <Dots
+            <SliderDots
                 images={images}
                 handleDotClick={handleDotClick}
                 currentIndex={currentIndex}
+                dotColor={'#fff'}
             />
         </StyledSlider>
     );
