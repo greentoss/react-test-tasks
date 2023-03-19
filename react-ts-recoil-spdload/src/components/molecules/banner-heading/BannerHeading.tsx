@@ -1,37 +1,33 @@
 import React from 'react';
 import styled from "styled-components";
-import Heading from '../../atoms/heading/Heading'
 
 const StyledBannerHeading = styled.div`
   position: absolute;
-  top: 50%;
+  top: 60%;
   left: 50%;
   transform: translate(-50%, -54%);
   z-index: 5;
 `
 
-const BannerHeading = () =>  {
+interface HeadingProps {
+    type: React.ComponentType<any>;
+    props: Record<string, any>;
+}
 
-    const headingOneStyle = {
-        color: "#fff",
-        fontWeight: 800,
-        fontSize: "310px",
-        lineHeight: "372px"
-    }
+interface Props {
+    headings: HeadingProps[];
+}
 
-    const headingTwoStyle = {
-        color: "#fff",
-        fontWeight: 800,
-        fontSize: "48px",
-        lineHeight: "58px"
-    }
+const BannerHeading = ({ headings }: Props) =>  {
 
     return (
         <StyledBannerHeading>
-            <Heading text={'the space is waiting for'} style={headingTwoStyle}/>
-            <Heading text={'you'} style={headingOneStyle}/>
+            {headings.map((heading, index) => {
+                return <heading.type key={index} {...heading.props} />
+            })}
         </StyledBannerHeading>
     );
 }
 
 export default BannerHeading;
+

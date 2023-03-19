@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Slider from "../slider/Slider";
 import BannerHeading from "../../molecules/banner-heading/BannerHeading";
 import ExploreButton from "../../atoms/buttons/explore-button/ExploreButton";
+import Heading from "../../atoms/heading/Heading";
 
 const StyledBanner = styled.div`
   position: relative;
@@ -18,9 +19,28 @@ const images = [
 
 const Banner = () =>  {
 
+    const headingOneStyle = {
+        color: "#fff",
+        fontWeight: 800,
+        fontSize: "310px",
+        lineHeight: "372px"
+    }
+
+    const headingTwoStyle = {
+        color: "#fff",
+        fontWeight: 800,
+        fontSize: "48px",
+        lineHeight: "58px"
+    }
+
+    const headings = [
+        <Heading text={'the space is waiting for'} style={headingTwoStyle}/>,
+        <Heading text={'you'} style={headingOneStyle}/>
+    ];
+
     return (
         <StyledBanner>
-            <BannerHeading />
+            <BannerHeading headings={headings}/>
             <Slider images={images} />
             <ExploreButton name={'Explore tours'}/>
         </StyledBanner>
@@ -28,3 +48,4 @@ const Banner = () =>  {
 }
 
 export default Banner;
+
