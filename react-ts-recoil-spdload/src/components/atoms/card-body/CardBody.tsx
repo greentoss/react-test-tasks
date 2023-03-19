@@ -2,7 +2,9 @@ import React from 'react';
 import styled from "styled-components";
 import Heading from "../heading/Heading";
 import Description from "../description/Description";
-import CardMenu from "../../molecules/card-menu/CardMenu";
+import ButtonMenu from "../../molecules/button-menu/ButtonMenu";
+import ActionButton from "../buttons/action-nutton/ActionButton";
+import LikeButton from "../buttons/like-button/LikeButton";
 
 const StyledCardBody = styled.div`
   padding: 32px 32px 24px 32px;
@@ -24,11 +26,16 @@ const CardBody= () => {
         lineHeight: "29px"
     }
 
+    const buttons = [
+        <ActionButton key="buy-button" name={'Buy'} />,
+        <LikeButton key="like-button" />,
+    ];
+
     return (
         <StyledCardBody>
             <Heading text={'extraordinary tour'} style={headingStyle} />
             <Description text={ 'Lorem ipsum dolor sit amet consectetur adipiscing elit' } />
-            <CardMenu />
+            <ButtonMenu buttons={buttons} />
         </StyledCardBody>
     )
 };

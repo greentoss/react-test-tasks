@@ -2,7 +2,9 @@ import React from 'react';
 import styled from "styled-components";
 import Logo from "../../atoms/logo/Logo";
 import Nav from "../../molecules/nav/Nav";
-import Menu from "../../molecules/nav-menu/NavMenu"
+import ButtonMenu from "../../molecules/button-menu/ButtonMenu";
+import LikeButton from "../../atoms/buttons/like-button/LikeButton";
+import ActionButton from "../../atoms/buttons/action-nutton/ActionButton";
 
 const StyledHeader = styled.header`
   display: flex;
@@ -17,11 +19,17 @@ const StyledHeader = styled.header`
 `
 
 const Header = () =>  {
+
+    const buttons = [
+        <LikeButton key="like-button" />,
+        <ActionButton key="action-button" name={'Sign in'} />,
+    ];
+
     return (
         <StyledHeader>
             <Logo/>
             <Nav/>
-            <Menu />
+            <ButtonMenu buttons={buttons} />
         </StyledHeader>
     );
 }

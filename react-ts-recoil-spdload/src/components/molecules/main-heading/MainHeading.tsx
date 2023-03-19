@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from "styled-components";
 import Heading from "../../atoms/heading/Heading";
-import ContentHeadingMenu from "../content-heading-menu/ContentHeadingMenu";
+import ButtonMenu from "../button-menu/ButtonMenu";
+import ArrowButton from "../../atoms/buttons/arrow-button/ArrowButton";
 
 const StyledMainContent = styled.div`
   display: flex;
@@ -24,10 +25,17 @@ const MainHeading = () =>  {
         lineHeight: "39px"
     }
 
+    const arrowLeft = require("../../../assets/img/icons/arrow-left.svg").default
+    const arrowRight = require("../../../assets/img/icons/arrow-right.svg").default
+    const buttons = [
+        <ArrowButton key="arrow-left" src={arrowLeft} />,
+        <ArrowButton key="arrow-right" src={arrowRight} />,
+    ];
+
     return (
         <StyledMainContent>
             <Heading text={ 'popular tours' } style={ headingStyle }/>
-            <ContentHeadingMenu />
+            <ButtonMenu buttons={buttons} />
         </StyledMainContent>
     );
 }
