@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
-import SliderImg from "../../atoms/slider-img/sliderImg";
+import SliderImg from "../../atoms/slider-img/SliderImg";
 
 const StyledSliderImgs = styled.div`
   width: 100%;

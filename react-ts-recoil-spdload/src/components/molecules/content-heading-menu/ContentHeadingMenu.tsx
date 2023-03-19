@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
-import ArrowButton from "../../atoms/buttons/arrow-button/arrowButton";
+import ArrowButton from "../../atoms/buttons/arrow-button/ArrowButton";
 
 const StyledMenu = styled.div`
     display: flex;

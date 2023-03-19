@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import SliderImgs from "../../molecules/slider-imgs/sliderImgs";
-import SliderDots from "../../molecules/slider-dots/slider-dots";
+import SliderImgs from "../../molecules/slider-imgs/SliderImgs";
+import SliderDots from "../../molecules/slider-dots/SliderDots";
 
 const StyledSlider = styled.div`
   width: 100%;

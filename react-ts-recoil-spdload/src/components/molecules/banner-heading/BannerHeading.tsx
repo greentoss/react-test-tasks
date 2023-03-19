@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
-import Heading from '../../atoms/heading/heading'
+import Heading from '../../atoms/heading/Heading'
 
 const StyledBannerHeading = styled.div`
   position: absolute;

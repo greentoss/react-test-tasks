@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from "styled-components";
-import Slider from "../slider/slider";
-import BannerHeading from "../../molecules/banner-heading/banner-heading";
-import ExploreButton from "../../atoms/buttons/explore-button/explore";
+import Slider from "../slider/Slider";
+import BannerHeading from "../../molecules/banner-heading/BannerHeading";
+import ExploreButton from "../../atoms/buttons/explore-button/ExploreButton";
 
 const StyledBanner = styled.div`
   position: relative;

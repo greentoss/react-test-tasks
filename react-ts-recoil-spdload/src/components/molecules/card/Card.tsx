@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
-import CardImage from "../../atoms/card-image/card-img";
-import CardBody from "../../atoms/card-body/card-body";
+import CardImage from "../../atoms/card-image/CardImage";
+import CardBody from "../../atoms/card-body/CardBody";
 
 const StyledCard = styled.div`
   width: 411px;

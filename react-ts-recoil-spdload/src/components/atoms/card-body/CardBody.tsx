@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from "styled-components";
-import Heading from "../heading/heading";
-import Description from "../description/decription";
-import CardMenu from "../../molecules/card-menu/card-menu";
+import Heading from "../heading/Heading";
+import Description from "../description/Description";
+import CardMenu from "../../molecules/card-menu/CardMenu";
 
 const StyledCardBody = styled.div`
   padding: 32px 32px 24px 32px;

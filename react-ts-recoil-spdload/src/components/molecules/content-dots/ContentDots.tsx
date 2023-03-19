@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
-import Dot from "../../atoms/dot/dot"
+import Dot from "../../atoms/dot/Dot"
 
 const StyledConentDots = styled.div`
   position: relative;

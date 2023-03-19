@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
-import Heading from "../../atoms/heading/heading";
-import ContentHeadingMenu from "../content-heading-menu/content-heading-menu";
+import Heading from "../../atoms/heading/Heading";
+import ContentHeadingMenu from "../content-heading-menu/ContentHeadingMenu";
 
 const StyledMainContent = styled.div`
   display: flex;

@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from "styled-components";
-import Logo from "../../atoms/logo/logo";
-import Nav from "../../molecules/nav/nav";
-import Menu from "../../molecules/nav-menu/navMenu"
+import Logo from "../../atoms/logo/Logo";
+import Nav from "../../molecules/nav/Nav";
+import Menu from "../../molecules/nav-menu/NavMenu"
 
 const StyledHeader = styled.header`
   display: flex;
