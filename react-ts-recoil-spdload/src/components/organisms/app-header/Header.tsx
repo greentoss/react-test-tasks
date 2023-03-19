@@ -5,6 +5,7 @@ import Nav from "../../molecules/nav/Nav";
 import ButtonMenu from "../../molecules/button-menu/ButtonMenu";
 import LikeButton from "../../atoms/buttons/like-button/LikeButton";
 import ActionButton from "../../atoms/buttons/action-nutton/ActionButton";
+import {Link} from "react-router-dom";
 
 const StyledHeader = styled.header`
   display: flex;
@@ -21,7 +22,7 @@ const StyledHeader = styled.header`
 const Header = () =>  {
 
     const buttons = [
-        <LikeButton key="like-button" />,
+        <Link to='/favourites'><LikeButton key="like-button" /></Link>,
         <ActionButton key="action-button" name={'Sign in'} />,
     ];
 

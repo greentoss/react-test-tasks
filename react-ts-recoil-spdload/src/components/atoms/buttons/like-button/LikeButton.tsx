@@ -1,4 +1,5 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
+import {useLocation} from "react-router-dom";
 import styled from "styled-components";
 import heart from "../../../../assets/img/icons/heart.svg"
 
@@ -30,22 +31,24 @@ const StyledButton = styled.button<StyledButtonProps>`
   }
 `
 
-interface LikeButtonProps {
-    active: boolean
-}
+const LikeButton = () => {
+    const [active, setActive] = useState(false);
+    const location = useLocation();
 
-const LikeButton = () =>  {
-    const [active, setActive] = useState(false)
+    useEffect(() => {
+        const pathSegments = location.pathname.split('/').filter(segment => segment !== ''); // remove empty segments
+        setActive(pathSegments[0] === 'favourites');
+    }, [location]);
 
     const handleClick = () => {
-        setActive(!active);
-    }
+        console.log('clicked');
+    };
 
     return (
         <StyledButton onClick={handleClick} active={active}>
             <img src={heart} alt="heart" />
         </StyledButton>
     );
-}
+};
 
 export default LikeButton;
