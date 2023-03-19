@@ -9,7 +9,6 @@ const StyledMainContent = styled.div`
   gap: 25px;
 
   margin: 45px 0;
-  max-width: 1440px;
 `
 
 const MainContent = () =>  {
