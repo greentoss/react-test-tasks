@@ -18,7 +18,11 @@ const StyledCardBody = styled.div`
   }
 `;
 
-const CardBody= () => {
+interface CardProps {
+    type: string
+}
+
+const CardBody= ( { type} : CardProps ) => {
     const headingStyle = {
         color: "#000",
         fontWeight: 700,
@@ -26,9 +30,11 @@ const CardBody= () => {
         lineHeight: "29px"
     }
 
+    //TODO: if we have type true - we pass there delete button
+
     const buttons = [
         <ActionButton key="buy-button" name={'Buy'} />,
-        <LikeButton key="like-button" />,
+        <LikeButton key="like-button" type={type} />,
     ];
 
     return (

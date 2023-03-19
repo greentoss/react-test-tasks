@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
 import heart from "../../../../assets/img/icons/heart.svg"
+import trash from "../../../../assets/img/icons/delete.svg"
 
 interface StyledButtonProps {
     active?: boolean;
@@ -30,14 +31,21 @@ const StyledButton = styled.button<StyledButtonProps>`
   }
 `
 
-const LikeButton = ({ active }: { active?: boolean }) => {
+interface LikeButtonProps {
+    active?: boolean,
+    type?: string
+}
+
+const LikeButton = ({ active, type }: LikeButtonProps) => {
     const handleClick = () => {
-        console.log('clicked');
+        type ? console.log('clicked like button') : console.log('clicked delete button');
     };
+
+    const src = type === 'like' ? heart : trash
 
     return (
         <StyledButton onClick={handleClick} active={active}>
-            <img src={heart} alt="heart" />
+            <img src={src} alt="heart" />
         </StyledButton>
     );
 };

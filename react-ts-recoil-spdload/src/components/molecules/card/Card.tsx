@@ -19,12 +19,16 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = ({ image, handleLikeClick, currentIndex}) => {
 
+    const buttonType = 'like'
+    // const buttonType = 'delete'
+
     return (
         <StyledCard>
-            <CardImage  src={ image }/>
-            <CardBody />
+            <CardImage src={ image }/>
+            <CardBody type={ buttonType }/>
         </StyledCard>
     );
 };
 
 export default Card;
+
