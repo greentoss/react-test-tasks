@@ -1,11 +1,11 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import styled from "styled-components";
 import Logo from "../../atoms/logo/Logo";
 import Nav from "../../molecules/nav/Nav";
 import ButtonMenu from "../../molecules/button-menu/ButtonMenu";
 import LikeButton from "../../atoms/buttons/like-button/LikeButton";
 import ActionButton from "../../atoms/buttons/action-nutton/ActionButton";
-import {Link} from "react-router-dom";
+import {Link, useLocation} from "react-router-dom";
 
 const StyledHeader = styled.header`
   display: flex;
@@ -21,8 +21,16 @@ const StyledHeader = styled.header`
 
 const Header = () =>  {
 
+    const location = useLocation();
+    const [isFavouritesPage, setIsFavouritesPage] = useState(false);
+
+    useEffect(() => {
+        const pathSegments = location.pathname.split('/').filter(segment => segment !== ''); // remove empty segments
+        setIsFavouritesPage(pathSegments[0] === 'favourites');
+    }, [location]);
+
     const buttons = [
-        <Link to='/favourites'><LikeButton key="like-button" /></Link>,
+        <Link to='/favourites'><LikeButton key="like-button" active={isFavouritesPage} /></Link>,
         <ActionButton key="action-button" name={'Sign in'} />,
     ];
 

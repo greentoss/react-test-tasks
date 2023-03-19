@@ -1,10 +1,9 @@
-import React, {useState, useEffect} from 'react';
-import {useLocation} from "react-router-dom";
+import React from 'react';
 import styled from "styled-components";
 import heart from "../../../../assets/img/icons/heart.svg"
 
 interface StyledButtonProps {
-    active: boolean;
+    active?: boolean;
 }
 
 const StyledButton = styled.button<StyledButtonProps>`
@@ -31,15 +30,7 @@ const StyledButton = styled.button<StyledButtonProps>`
   }
 `
 
-const LikeButton = () => {
-    const [active, setActive] = useState(false);
-    const location = useLocation();
-
-    useEffect(() => {
-        const pathSegments = location.pathname.split('/').filter(segment => segment !== ''); // remove empty segments
-        setActive(pathSegments[0] === 'favourites');
-    }, [location]);
-
+const LikeButton = ({ active }: { active?: boolean }) => {
     const handleClick = () => {
         console.log('clicked');
     };

@@ -8,7 +8,7 @@ const StyledSliderDots = styled.div`
   justify-content: center;
   gap: 8px;
   width: 100%;  //places dots in center
-  top: 50%;
+  top: 60%;
   z-index: 10;
 `
 
