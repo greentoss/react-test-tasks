@@ -33,7 +33,7 @@ const StyledButton = styled.button<StyledButtonProps>`
 
 interface LikeButtonProps {
     active?: boolean,
-    type?: string
+    type: string
 }
 
 const LikeButton = ({ active, type }: LikeButtonProps) => {

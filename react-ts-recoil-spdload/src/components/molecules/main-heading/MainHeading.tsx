@@ -34,7 +34,7 @@ const MainHeading = () =>  {
 
     return (
         <StyledMainContent>
-            <Heading text={ 'popular tours' } style={ headingStyle }/>
+            <Heading text={ 'popular rockets' } style={ headingStyle }/>
             <ButtonMenu buttons={buttons} />
         </StyledMainContent>
     );

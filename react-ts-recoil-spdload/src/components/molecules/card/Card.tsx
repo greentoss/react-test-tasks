@@ -5,27 +5,25 @@ import CardBody from "../../atoms/card-body/CardBody";
 
 const StyledCard = styled.div`
   width: 411px;
-  height: 572px;
-
   border: 1px solid #D3EAFF;
-
 `
 
 interface CardProps {
-    image: string;
-    currentIndex: number;
+    image: string,
+    title: string,
+    description: string
     handleLikeClick: (index: number) => void;
 }
 
-const Card: React.FC<CardProps> = ({ image, handleLikeClick, currentIndex}) => {
-
-    const buttonType = 'like'
-    // const buttonType = 'delete'
+const Card: React.FC<CardProps> = ({ image, title, description, handleLikeClick}) => {
 
     return (
         <StyledCard>
             <CardImage src={ image }/>
-            <CardBody type={ buttonType }/>
+            <CardBody
+                title={ title }
+                description={ description }
+            />
         </StyledCard>
     );
 };

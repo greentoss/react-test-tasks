@@ -6,6 +6,8 @@ import ButtonMenu from "../../molecules/button-menu/ButtonMenu";
 import LikeButton from "../../atoms/buttons/like-button/LikeButton";
 import ActionButton from "../../atoms/buttons/action-nutton/ActionButton";
 import {Link, useLocation} from "react-router-dom";
+import {favoriteState} from "../../../recoil-state/atoms/favoriteState"
+import {useRecoilState, useRecoilValue} from "recoil";
 
 const StyledHeader = styled.header`
   display: flex;
@@ -22,7 +24,10 @@ const StyledHeader = styled.header`
 const Header = () =>  {
 
     const location = useLocation();
-    const [isFavouritesPage, setIsFavouritesPage] = useState(false);
+    // const [isFavouritesPage, setIsFavouritesPage] = useState(false);
+    const [isFavouritesPage, setIsFavouritesPage] = useRecoilState(favoriteState);
+
+    //TODO: change favorteState
 
     useEffect(() => {
         const pathSegments = location.pathname.split('/').filter(segment => segment !== ''); // remove empty segments
@@ -30,7 +35,7 @@ const Header = () =>  {
     }, [location]);
 
     const buttons = [
-        <Link to='/favourites'><LikeButton key="like-button" active={isFavouritesPage} /></Link>,
+        <Link to='/favourites'><LikeButton key="like-button" active={isFavouritesPage} type={'like'} /></Link>,
         <ActionButton key="action-button" name={'Sign in'} />,
     ];
 
