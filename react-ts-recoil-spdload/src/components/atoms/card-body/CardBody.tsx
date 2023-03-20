@@ -27,8 +27,7 @@ interface CardProps {
 
 const CardBody= ( { title, description } : CardProps ) => {
 
-    const buttonType = useRecoilValue(favoriteState) ? 'like' : 'delete'
-    console.log(buttonType, 'buttontype from cardBody')
+    const buttonType = useRecoilValue(favoriteState) ? 'delete' : 'like'
 
     const headingStyle = {
         color: "#000",
@@ -46,8 +45,6 @@ const CardBody= ( { title, description } : CardProps ) => {
         <StyledCardBody>
             <Heading text={title} style={headingStyle} />
             <Description text={ description } />
-            {/*<Heading text={'extraordinary tour'} style={headingStyle} />*/}
-            {/*<Description text={ 'Lorem ipsum dolor sit amet consectetur adipiscing elit' } />*/}
             <ButtonMenu buttons={buttons} />
         </StyledCardBody>
     )

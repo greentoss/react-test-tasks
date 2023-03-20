@@ -5,7 +5,7 @@ const StyledBannerHeading = styled.div`
   position: absolute;
   top: 60%;
   left: 50%;
-  transform: translate(-50%, -54%);
+  transform: translate(-47%, -54%);
   z-index: 5;
 `
 

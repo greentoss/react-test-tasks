@@ -1,11 +1,13 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import styled from "styled-components";
 import Card from "../card/Card";
-import { useRecoilValue } from 'recoil';
+import {useRecoilValue, useSetRecoilState} from 'recoil';
 import {favoriteState} from "../../../recoil-state/atoms/favoriteState";
 import {rocketsArrayState} from "../../../recoil-state/atoms/rocketsArrayState";
 import {favouritesArrayState} from "../../../recoil-state/atoms/favouritesArrayState";
 import useFetchRockets from "../../../hooks/useFetchData";
+import {attachImageToRocket} from "../../../utils/attachImageToRocket";
+import {navigateCardsState} from "../../../recoil-state/atoms/navigateCardsState";
 
 const StyledMainContent = styled.div`
   display: flex;
@@ -14,28 +16,9 @@ const StyledMainContent = styled.div`
   gap: 25px;
 
   margin: 45px 0;
+
+  /* Animation styles */
 `
-
-const images = [
-    require('../../../assets/img/pictures/image1.jpg'),
-    require('../../../assets/img/pictures/image2.jpg'),
-    require('../../../assets/img/pictures/image3.jpg'),
-];
-
-type Rocket = {
-    id: string;
-    description: string;
-    name: string;
-}
-
-const attachImageToRocket = (rockets: Rocket[]) => {
-    return rockets.map((rocket, index) => {
-        return {
-            ...rocket,
-            image: images[index % images.length]
-        }
-    });
-}
 
 const MainContent = () =>  {
     const { loading, error } = useFetchRockets();   //get data from API
@@ -49,6 +32,10 @@ const MainContent = () =>  {
 
     const favourites = useRecoilValue(favouritesArrayState)
 
+    const [startIndex, setStartIndex] = useState(0); // state variable for first card index
+    const [slideDirection, setSlideDirection] = useState<"left" | "right">("left");
+    const setNavigationState = useSetRecoilState(navigateCardsState);
+
     interface CardItemProps {
         items: {
             id: string;
@@ -59,9 +46,11 @@ const MainContent = () =>  {
     }
 
     function ShowCards({ items }: CardItemProps) {
-        return items.length ? (
+        const endIndex = Math.min(startIndex + 3, items.length); // calculate the index of the last card to display
+        const displayItems = items.slice(startIndex, endIndex); // slice the array to display only the desired cards
+        return displayItems.length ? (
             <>
-                {items.map((item) => (
+                {displayItems.map((item) => (
                     <Card
                         key={item.id}
                         handleLikeClick={handleClick}
@@ -73,6 +62,26 @@ const MainContent = () =>  {
             </>
         ) : null;
     }
+
+    const handleShowNext = () => {
+        const nextIndex = startIndex + 3;
+        if (nextIndex < rocketsWithImages.length) {
+            setStartIndex(nextIndex);
+            setSlideDirection("right");
+        }
+    }
+
+    const handleShowPrev = () => {
+        const prevIndex = startIndex - 3;
+        if (prevIndex >= 0) {
+            setStartIndex(prevIndex);
+            setSlideDirection("left");
+        }
+    }
+
+    useEffect(() => {
+        setNavigationState({ handleShowPrev, handleShowNext });
+    }, [setNavigationState, handleShowPrev, handleShowNext]);
 
     if (loading) {
         return (
@@ -91,13 +100,15 @@ const MainContent = () =>  {
     }
 
     return (
-        <StyledMainContent>
-            {isFavorites ? (
-                <ShowCards items={favourites} />
-            ) : (
-                <ShowCards items={rocketsWithImages} />
-            )}
-        </StyledMainContent>
+        <>
+            <StyledMainContent >
+                {isFavorites ? (
+                    <ShowCards items={favourites} />
+                ) : (
+                    <ShowCards items={rocketsWithImages} />
+                )}
+            </StyledMainContent>
+        </>
     );
 }
 

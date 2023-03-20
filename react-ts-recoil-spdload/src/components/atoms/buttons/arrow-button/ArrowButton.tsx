@@ -24,13 +24,10 @@ const StyledButton = styled.button`
 
 interface ArrowButtonProps {
     src: string
+    handleClick: () => void
 }
 
-const ArrowButton = ( {src}: ArrowButtonProps ) =>  {
-
-    const handleClick = () => {
-        console.log('arrow clicked')
-    }
+const ArrowButton = ( {src, handleClick}: ArrowButtonProps ) =>  {
 
     return (
         <StyledButton onClick={handleClick}>

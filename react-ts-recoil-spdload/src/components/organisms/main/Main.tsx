@@ -19,11 +19,6 @@ const Main = () =>  {
         <StyledMain>
             <MainHeading />
             <MainContent />
-            <ContentDots
-                currentIndex={1}
-                dotColor={'#000'}
-                handleDotClick={ handleClick }
-            />
         </StyledMain>
     );
 }

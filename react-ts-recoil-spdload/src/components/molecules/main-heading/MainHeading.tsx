@@ -3,6 +3,8 @@ import styled from "styled-components";
 import Heading from "../../atoms/heading/Heading";
 import ButtonMenu from "../button-menu/ButtonMenu";
 import ArrowButton from "../../atoms/buttons/arrow-button/ArrowButton";
+import {useRecoilValue} from "recoil";
+import {navigateCardsState} from "../../../recoil-state/atoms/navigateCardsState";
 
 const StyledMainContent = styled.div`
   display: flex;
@@ -27,9 +29,12 @@ const MainHeading = () =>  {
 
     const arrowLeft = require("../../../assets/img/icons/arrow-left.svg").default
     const arrowRight = require("../../../assets/img/icons/arrow-right.svg").default
+
+    const { handleShowPrev, handleShowNext } = useRecoilValue(navigateCardsState);
+
     const buttons = [
-        <ArrowButton key="arrow-left" src={arrowLeft} />,
-        <ArrowButton key="arrow-right" src={arrowRight} />,
+        <ArrowButton key="arrow-left" src={arrowLeft}  handleClick={handleShowPrev} />,
+        <ArrowButton key="arrow-right" src={arrowRight}  handleClick={handleShowNext} />,
     ];
 
     return (
@@ -41,3 +46,5 @@ const MainHeading = () =>  {
 }
 
 export default MainHeading;
+
+

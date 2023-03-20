@@ -22,9 +22,7 @@ const StyledHeader = styled.header`
 `
 
 const Header = () =>  {
-
     const location = useLocation();
-    // const [isFavouritesPage, setIsFavouritesPage] = useState(false);
     const [isFavouritesPage, setIsFavouritesPage] = useRecoilState(favoriteState);
 
     //TODO: change favorteState
