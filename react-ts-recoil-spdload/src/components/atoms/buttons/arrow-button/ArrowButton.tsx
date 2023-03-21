@@ -11,13 +11,13 @@ const StyledButton = styled.button`
   cursor: pointer;
 
   &:hover {
-    box-shadow: 0 0 15px #2448bd; // add the blue shadow on hover
+    box-shadow: 0 0 15px #2448bd;
     transition: box-shadow 0.3s ease-in-out;
   }
 
   &:not(:hover) {
-    box-shadow: none; // remove the shadow when not hovering
-    transition: box-shadow 0.3s ease-in-out; // add transition for smoother effect
+    box-shadow: none;
+    transition: box-shadow 0.3s ease-in-out;
   }
   
 `

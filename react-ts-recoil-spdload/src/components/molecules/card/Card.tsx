@@ -8,11 +8,6 @@ const StyledCard = styled.div`
   border: 1px solid #D3EAFF;
 `
 
-interface Handlers {
-    handleLikeClick: (id: string) => void;
-    handleDeleteClick: (id: string) => void;
-}
-
 interface CardProps {
     image: string,
     title: string,

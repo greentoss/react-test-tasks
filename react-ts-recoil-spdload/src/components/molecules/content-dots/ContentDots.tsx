@@ -7,7 +7,7 @@ const StyledConentDots = styled.div`
   display: flex;
   justify-content: center;
   gap: 8px;
-  width: 100%;  //places dots in center
+  width: 100%;
   margin-bottom: 90px;
 `
 
