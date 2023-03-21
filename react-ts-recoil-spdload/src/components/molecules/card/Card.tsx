@@ -8,14 +8,23 @@ const StyledCard = styled.div`
   border: 1px solid #D3EAFF;
 `
 
+interface Handlers {
+    handleLikeClick: (id: string) => void;
+    handleDeleteClick: (id: string) => void;
+}
+
 interface CardProps {
     image: string,
     title: string,
-    description: string
-    handleLikeClick: (index: number) => void;
+    description: string,
+    handlers: {
+        handleLikeClick: (id: string) => void;
+        handleDeleteClick: (id: string) => void;
+    },
+    id: string,
 }
 
-const Card: React.FC<CardProps> = ({ image, title, description, handleLikeClick}) => {
+const Card: React.FC<CardProps> = ({ image, title, description, handlers, id}) => {
 
     return (
         <StyledCard>
@@ -23,6 +32,8 @@ const Card: React.FC<CardProps> = ({ image, title, description, handleLikeClick}
             <CardBody
                 title={ title }
                 description={ description }
+                id={ id }
+                handlers={ handlers }
             />
         </StyledCard>
     );

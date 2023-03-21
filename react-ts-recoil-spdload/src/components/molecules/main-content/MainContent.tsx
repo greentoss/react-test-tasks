@@ -12,6 +12,7 @@ import {navigateCardsState} from "../../../recoil-state/atoms/navigateCardsState
 const StyledMainContent = styled.div<{ slideDirection: "left" | "right" }>`
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   gap: 25px;
 
   margin: 45px 0;
@@ -25,14 +26,13 @@ const StyledMainContent = styled.div<{ slideDirection: "left" | "right" }>`
 const MainContent = () =>  {
     const { loading, error } = useFetchRockets();   //get data from API
 
-    const handleClick = () => console.log('click')
-
     const isFavorites = useRecoilValue(favoriteState)
 
     const rockets = useRecoilValue(rocketsArrayState);   //get data from Recoil state
     const rocketsWithImages = attachImageToRocket(rockets); //add images to cards
 
     const favourites = useRecoilValue(favouritesArrayState)
+    const setFavouritesArray = useSetRecoilState(favouritesArrayState);
 
     const [startIndex, setStartIndex] = useState(0); // state variable for first card index
     const [slideDirection, setSlideDirection] = useState<"left" | "right">("left");
@@ -55,7 +55,11 @@ const MainContent = () =>  {
                 {displayItems.map((item) => (
                     <Card
                         key={item.id}
-                        handleLikeClick={handleClick}
+                        handlers={{
+                            handleLikeClick,
+                            handleDeleteClick,
+                        }}
+                        id = {item.id}
                         image={item.image}
                         title={item.name}
                         description={item.description}
@@ -64,6 +68,32 @@ const MainContent = () =>  {
             </>
         ) : null;
     }
+
+    const handleLikeClick = (id: string) => {
+        setFavouritesArray((prevFavourites) => {
+            // Check if the rocket is already in the favourites array
+            const rocketIndex = prevFavourites.findIndex((rocket) => rocket.id === id);
+            if (rocketIndex !== -1) {
+                // If the rocket is already in the favourites array, remove it
+                return [...prevFavourites.slice(0, rocketIndex), ...prevFavourites.slice(rocketIndex + 1)];
+            } else {
+                // If the rocket is not in the favourites array, add it
+                const rocket = rocketsWithImages.find((rocket) => rocket.id === id);
+                return rocket ? [...prevFavourites, rocket] : prevFavourites;
+            }
+        });
+    };
+
+    const handleDeleteClick = (id: string) => {
+        setFavouritesArray((prevFavourites) => {
+            const rocketIndex = prevFavourites.findIndex((rocket) => rocket.id === id);
+            if (rocketIndex !== -1) {
+                return [...prevFavourites.slice(0, rocketIndex), ...prevFavourites.slice(rocketIndex + 1)];
+            } else {
+                return prevFavourites;
+            }
+        });
+    };
 
     const handleShowNext = () => {
         const nextIndex = startIndex + 3;

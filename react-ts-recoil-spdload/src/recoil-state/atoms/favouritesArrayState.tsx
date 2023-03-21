@@ -1,6 +1,13 @@
 import { atom } from 'recoil';
 
-export const favouritesArrayState = atom({
+interface Rocket {
+    id: string;
+    image: string;
+    name: string;
+    description: string;
+}
+
+export const favouritesArrayState = atom<Rocket[]>({
     key: 'favouritesArrayState',
     default: [],
 });

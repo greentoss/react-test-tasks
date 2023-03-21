@@ -34,17 +34,22 @@ const StyledButton = styled.button<StyledButtonProps>`
 interface LikeButtonProps {
     active?: boolean,
     type: string
+    handleClick?: ((id: string) => void) | undefined
+    id?: string
 }
 
-const LikeButton = ({ active, type }: LikeButtonProps) => {
-    const handleClick = () => {
-        type ? console.log('clicked like button') : console.log('clicked delete button');
-    };
+const LikeButton = ({ active, type, handleClick, id }: LikeButtonProps) => {
 
     const src = type === 'like' ? heart : trash
 
+    const onClick = () => {
+        if (handleClick  && id) {
+            handleClick(id);
+        }
+    }
+
     return (
-        <StyledButton onClick={handleClick} active={active}>
+        <StyledButton onClick={onClick} active={active}>
             <img src={src} alt="heart" />
         </StyledButton>
     );

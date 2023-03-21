@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
 import ClearAllButton from "../../atoms/buttons/clear-all-button/ClearAllButton";
+import {useClearFavourites} from "../../../hooks/useClearFavourites";
 
 const StyledMainBlock = styled.div`
   display: flex;
@@ -15,11 +16,11 @@ const StyledMainBlock = styled.div`
 
 const MainBlock = () =>  {
 
-    const handleClick = () => console.log('clear ALl')
+    const clearFavourites = useClearFavourites()
 
     return (
         <StyledMainBlock>
-            <ClearAllButton  name={ 'Clear all' } handleClick={handleClick}/>
+            <ClearAllButton  name={ 'Clear all' } handleClick={ clearFavourites }/>
         </StyledMainBlock>
     );
 }

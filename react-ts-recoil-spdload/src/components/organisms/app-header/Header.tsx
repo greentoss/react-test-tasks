@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import styled from "styled-components";
 import Logo from "../../atoms/logo/Logo";
 import Nav from "../../molecules/nav/Nav";
@@ -24,8 +24,6 @@ const StyledHeader = styled.header`
 const Header = () =>  {
     const location = useLocation();
     const [isFavouritesPage, setIsFavouritesPage] = useRecoilState(favoriteState);
-
-    //TODO: change favorteState
 
     useEffect(() => {
         const pathSegments = location.pathname.split('/').filter(segment => segment !== ''); // remove empty segments

@@ -22,12 +22,19 @@ const StyledCardBody = styled.div`
 
 interface CardProps {
     title: string,
-    description: string
+    description: string,
+    id: string,
+    handlers: {
+        handleLikeClick: (id: string) => void;
+        handleDeleteClick: (id: string) => void;
+    }
 }
 
-const CardBody= ( { title, description } : CardProps ) => {
+const CardBody= ( { title, description, id, handlers } : CardProps ) => {
 
     const buttonType = useRecoilValue(favoriteState) ? 'delete' : 'like'
+
+    const { handleLikeClick, handleDeleteClick } = handlers;
 
     const headingStyle = {
         color: "#000",
@@ -36,9 +43,15 @@ const CardBody= ( { title, description } : CardProps ) => {
         lineHeight: "29px"
     }
 
+    const likeButton = buttonType === 'like'
+        ?
+        <LikeButton key="like-button" type={buttonType} id={id} handleClick={handleLikeClick} />
+        :
+        <LikeButton key="like-button" type={buttonType} id={id} handleClick={handleDeleteClick} />
+
     const buttons = [
         <ActionButton key="buy-button" name={'Buy'} />,
-        <LikeButton key="like-button" type={buttonType} />,
+        likeButton
     ];
 
     return (
