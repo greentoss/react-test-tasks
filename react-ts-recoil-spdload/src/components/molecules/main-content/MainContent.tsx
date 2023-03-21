@@ -47,7 +47,7 @@ const MainContent = () =>  {
         }[];
     }
 
-    function ShowCards({ items }: CardItemProps) {
+    const ShowCards = ({ items }: CardItemProps) => {
         const endIndex = Math.min(startIndex + 3, items.length); // calculate the index of the last card to display
         const displayItems = items.slice(startIndex, endIndex); // slice the array to display only the desired cards
         return displayItems.length ? (
