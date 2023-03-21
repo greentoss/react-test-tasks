@@ -2,7 +2,6 @@ import React from 'react';
 import styled from "styled-components";
 import MainContent from "../../molecules/main-content/MainContent";
 import MainHeading from "../../molecules/main-heading/MainHeading";
-import ContentDots from "../../molecules/content-dots/ContentDots";
 
 const StyledMain = styled.div`
   display: flex;
@@ -12,8 +11,6 @@ const StyledMain = styled.div`
 `
 
 const Main = () =>  {
-
-    const handleClick = () => console.log('click')
 
     return (
         <StyledMain>

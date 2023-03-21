@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
+import {cutTheText} from "../../../utils/cutTheText";
 
 const StyledDescription = styled.p`
   font-family: 'Lato',serif;
@@ -16,18 +17,6 @@ const StyledDescription = styled.p`
   
   color: #556B84;
 `;
-
-const cutTheText = (text: string, height: number) => {
-    const lineHeight = 25; // You may need to adjust this based on your font size and line height
-    const lines = Math.floor(height / lineHeight);
-    const totalChars = lines * 40; // You may need to adjust this based on the width of your container
-
-    if (text.length <= totalChars) {
-        return text;
-    }
-
-    return `${text.slice(0, totalChars).trim()}...`;
-};
 
 interface HeadingProps {
     text: string

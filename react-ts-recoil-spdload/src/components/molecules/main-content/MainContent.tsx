@@ -9,15 +9,17 @@ import useFetchRockets from "../../../hooks/useFetchData";
 import {attachImageToRocket} from "../../../utils/attachImageToRocket";
 import {navigateCardsState} from "../../../recoil-state/atoms/navigateCardsState";
 
-const StyledMainContent = styled.div`
+const StyledMainContent = styled.div<{ slideDirection: "left" | "right" }>`
   display: flex;
   flex-direction: row;
-  //flex-wrap: wrap;
   gap: 25px;
 
   margin: 45px 0;
 
   /* Animation styles */
+  transition: transform 1s ease-in;
+  transform: ${(props) =>
+          props.slideDirection === "right" ? "translateX(-100%)" : "translateX(0)"};
 `
 
 const MainContent = () =>  {
@@ -101,7 +103,7 @@ const MainContent = () =>  {
 
     return (
         <>
-            <StyledMainContent >
+            <StyledMainContent slideDirection={slideDirection}>
                 {isFavorites ? (
                     <ShowCards items={favourites} />
                 ) : (
